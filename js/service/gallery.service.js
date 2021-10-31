@@ -27,5 +27,5 @@ function createImgs() {
 };
 
 function createImg(id, keyword) {
-    return  {id,url:`images/${id}.jpg`, keyword}
+    return  {id,url:`imgs/${id}.jpg`, keyword}
 }
