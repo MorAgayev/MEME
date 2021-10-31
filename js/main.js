@@ -9,11 +9,8 @@ function onInit() {
     elGalleryBtn.addEventListener('click', openGallery);
     var elMemesBtn = document.querySelector('.memes-btn');
     elMemesBtn.addEventListener('click', showMemesPage);
-    const elCanvasContainer = document.querySelector('.canvas-container')
-    elCanvasContainer.addEventListener('resize', resizeCanvas);
-    // mouseEvent()
     renderGallery();
-    createMeme();
+    createMeme()
 }
 
 function menuToggle() {
@@ -40,3 +37,13 @@ function openHomePage() {
     elGallery.hidden = true;
 }
 
+// function closeNav() {
+//     console.log('close');
+//     var elNav = document.querySelector('.nav-container');
+//     elNav.hidden = true;
+// } 
+
+// function openNav() {
+//     var elNav = document.querySelector('.nav-container');
+//     elNav.hidden = false;
+// }
