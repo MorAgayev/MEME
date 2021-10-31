@@ -104,7 +104,7 @@ function drawImg(src) {
     var img = new Image();
     img.src = src;
     img.onload = () => {
-      gCtx.imageSmoothingQuality = 'high';
+      gCtx.moothingQuality = 'high';
       gImage = img;
       updateCanvas()
     };
