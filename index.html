@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/memes.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <title>MEME2</title>
+</head>
+
+<body onload="onInit()">
+    <div class="top-container">
+        <div class="top-nav main-layout">
+            <div class="logo" style="background-image: url(/ICONS/logo.svg);"></div>
+            <button class="menu-btn" onclick="menuToggle()">☰</button>
+            <ul class="main-nav flex">
+                <button class="menu-btn" onclick="menuToggle()">X</button>
+                <li><a href="#" onclick="menuToggle()" onclick="openHomePage()">Home</a></li>
+                <li><a class="gallery-btn" href="#" onclick="menuToggle()" onclick="openGallery()">Gallery</a></li>
+                <li><a href="#" class="memes-btn" onclick="menuToggle()">Memes</a></li>
+                <li><a href="#" onclick="menuToggle()">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="home main-layout">
+        <main class="home-page" style="background-image: url(/ICONS/home-img.jpg);">
+        <button onclick="openGallery()">Start Designing <br> Your Meme</button>
+        </main>
+    </section>
+
+    <section class="gallery main-layout" hidden>
+        <h2>1. Pick Your Meme Background</h2>
+        <main class="gallery-container"></main>
+    </section>
+
+    <section class="canvas main-layout" hidden>
+        <div class="canvas-page main-layout">
+            <div class="page-title"><h3>2. Edit Meme</h3></div>
+            <div class="social">
+                <ul>
+                    <li><a href="#" onclick="downloadMeme(this)" download="my-img.jpg">Download</a></li>
+                    <li><a href="#" onclick="uploadMeme()">Share</a></li>
+                    <li><a href="#" onclick="onSaveMeme()">Save</a></li>
+                </ul>
+            </div>
+            <div class="control-container">
+                <div class="font-size-editor">
+                        <button onclick="onChangeFontSize('increase')">+</button>
+                        <span>60</span>
+                        <button onclick="onChangeFontSize('decrease')">-</button>
+                </div>
+                <select onchange="onChangeFont(this.value)">
+                    <option value="IMPACT">IMPACT</option>
+                    <option value="MONOSPACE">MONOSPACE</option>
+                    <option value="VERDANA">VERDANA</option>
+                </select>
+                <input type="color" name="text-color" class="text-color" oninput="onChangeTxtColor(this.value)">
+                <input type="range" class="location-range" oninput="onChangeLocation(this.value)" min="50" max="400">
+                <div class="align-btns">
+                    <img src="./ICONS/align-left.png" onclick="onChangeAlign('left')">
+                    <img src="./ICONS/align-center.png" onclick="onChangeAlign('center')">
+                    <img src="./ICONS/align-right.png" onclick="onChangeAlign('right')">
+                </div>
+                <div class="share-container"></div>
+                <p class="user-msg"></p>
+            </div>
+            <div class="txt-container">
+                <input class="txt-input" type="text" placeholder="Enter some text"
+                    oninput="onChangeTxt(this.value)">
+                <img class="btn-switch" src="./ICONS/change-btn.png" onclick="onSwitchLines()">
+                <div class="delete-add">
+                    <img src="./ICONS/add-line.png" onclick="onAddLine()">
+                    <img src="./ICONS/delete-line.png" onclick="onDeleteLine()">
+                </div>
+            </div>
+            <div class="canvas-container">
+                <canvas class="my-canvas" width="300" height="300"></canvas>
+            </div>
+            <!-- <div class="share-container" hidden>
+                <div class="share-modal">
+                    <h3>Share your MAMA on Facebook</h3>
+                    <p class="user-msg"></p>
+                    <div class="share-container"></div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <section class="memes" hidden>
+        <div class="memes-container main-layout"></div>
+    </section>
+    
+    <footer>
+        <div class="footer-content main-layout">
+            <small>@2021 Designed and Developed By Mor</small>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/controller/editor.controller.js"></script>
+    <script src="js/controller/gallery.controller.js"></script>
+    <script src="js/controller/memes.controller.js"></script>
+    <script src="js/service/editor.service.js"></script>
+    <script src="js/service/gallery.service.js"></script>
+    <script src="js/service/storage.service.js"></script>
+    <script src="js/uploud.js"></script>
+</body>
+
+</html>

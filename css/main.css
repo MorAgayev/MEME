@@ -1,0 +1,249 @@
+*{box-sizing: border-box;}
+
+
+/* TYPOGRAPHY */
+@font-face {
+    font-family: Teko-Medium;
+    src: url(../fonts/Teko-Medium.ttf);
+}
+@font-face {
+    font-family: Teko-Bold;
+    src: url(../fonts/Teko-Bold.ttf);
+}
+@font-face {
+    font-family: Teko-Regular;
+    src: url(../fonts/Teko-Regular.ttf);
+}
+
+/* BASIC */
+body {
+    margin: 0;
+}
+
+html {
+    font-family: Teko-Regular;
+    font-size: 18px;
+    letter-spacing: 0.063rem;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* LAYOUT */
+.main-layout {
+    max-width: 980px;
+    margin: auto;
+}
+
+/* TOP CONTAINER */
+.top-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.top-nav {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-nav {
+    display: flex;
+}
+
+.main-nav li a  {
+    padding: 10px 30px;
+    color: #333;
+    transition: all 0.5s;
+}
+
+/* .main-nav li a:hover {
+   background-color: rgb(221, 221, 221);
+   border-radius: 10px;
+} */
+
+/* HOME PAGE */
+.home-page {
+    width: 100%;
+    height: 70vh;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.home-page button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    background-color: rgb(211, 88, 39);
+    border-radius: 10px;
+    border: none;
+    font-family: Teko-Regular;
+    font-size: 1.3rem;
+    letter-spacing: 0.2em;
+    line-height: 1.7;
+    transition: all 0.5s;
+}
+
+.home-page button:hover {
+    background-color: rgb(228, 95, 42);
+}
+
+.home-page button:active {
+    background-color: rgb(233, 79, 18);
+}
+
+/* FOOTER */
+footer {
+    /* background-color: orange; */
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+small {
+    color: rgb(151, 147, 147);
+}
+
+@media (max-width: 550px) {
+    .main-layout {
+        margin-left: 20px;
+        margin-right: 20px;
+        max-width: 540px;
+    }
+
+    .top-nav {
+        justify-content: space-between;
+    }
+    
+    .main-nav {
+        background-color: rgb(233, 131, 91);
+        /* opacity: 0.9; */
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin-top: 0;
+        height: 100vh;
+        flex-direction: column;
+        padding-left: 0px;
+        transform: translateX(100%);
+        transition: transform .6s, box-shadow .6s;
+        z-index: 1;
+    }
+
+    .main-nav li a:hover {
+        border-bottom: 1px solid black;
+     } 
+
+    body.menu-open .main-nav {
+        transform: translateX(0);
+        box-shadow: -2px -2px 20px rgba(0, 0, 0, .25);
+    }
+
+    .main-nav li {
+        padding: 30px;
+    }
+
+    .main-nav a {
+        width: 250px;
+        height: 100px;
+        font-size: 30px;
+    }
+
+    .menu-btn {
+        background-color: rgb(233, 131, 91);
+        border: none;
+        /* border: 1px solid #333; */
+        color: #333;
+        font-size: 18px;
+        width: 48px;
+        height: 48px;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media (min-width:560px) {
+    .menu-btn {
+        display: none;
+    }
+    .main-layout {
+        max-width: 540px;
+    }
+
+    .main-nav li a:hover {
+        background-color: rgb(221, 221, 221);
+        border-radius: 10px;
+     } 
+}
+
+@media (min-width:760px) {
+    .main-layout {
+        max-width: 720px;
+    }
+}
+
+@media (min-width:1020px) {
+    .main-layout {
+        max-width: 980px;
+    }
+}
+
+/* home page
+
+.home-page {
+    width: 100%;
+    height: 70vh;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.home-page button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    background-color: rgb(211, 88, 39);
+    border-radius: 10px;
+    border: none;
+    font-family: Teko-Regular;
+    font-size: 1.3rem;
+    letter-spacing: 0.2em;
+    line-height: 1.7;
+    transition: all 0.5s;
+}
+
+.home-page button:hover {
+    background-color: rgb(228, 95, 42);
+}
+
+.home-page button:active {
+    background-color: rgb(233, 79, 18);
+} */
