@@ -15,6 +15,24 @@ function updateCanvas() {
     })
 }
 
+function onImgInput(ev) {
+    loadImageFromInput(ev, updateCanvas)
+}
+
+function loadImageFromInput(ev, onImageReady) {
+    document.querySelector('.share-container').innerHTML = ''
+    var reader = new FileReader()
+
+    reader.onload = function (event) {
+        var img = new Image()
+        img.onload = onImageReady.bind(null, img)
+        img.src = event.target.result
+        gImage = img
+    }
+    reader.readAsDataURL(ev.target.files[0])
+}
+
+
 function onSaveMeme() {
     gMemes.push(gMeme);
     var imageUrl = gElCanvas.toDataURL('image/jpeg');

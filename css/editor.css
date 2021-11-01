@@ -55,6 +55,13 @@
     color: whitesmoke;
 }
 
+.file-input {
+    cursor: pointer;
+    background-color: #aaa;
+    border: none;
+    padding: 5px;
+}
+
 .social li:hover {
     background-color: #aaa;
 }
