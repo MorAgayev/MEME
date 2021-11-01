@@ -93,7 +93,8 @@ function onSwitchLines() {
 }
 
 function onChangeFontSize(choice) {
-    setFontSize(choice);
+    var size = setFontSize(choice);
+    document.querySelector('.font-size-editor span').innerText = size;
     updateCanvas();
 }
 

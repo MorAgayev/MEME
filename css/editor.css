@@ -49,6 +49,7 @@
     padding: 20px;
     border-bottom: 1px solid gray;
     transition: all 0.5s;
+    max-width: 100px;
 }
 
 .social li a {
@@ -57,9 +58,9 @@
 
 .file-input {
     cursor: pointer;
-    background-color: #aaa;
+    /* background-color: #aaa;
     border: none;
-    padding: 5px;
+    padding: 5px; */
 }
 
 .social li:hover {
