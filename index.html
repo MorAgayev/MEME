@@ -19,7 +19,7 @@
             <button class="menu-btn" onclick="menuToggle()">☰</button>
             <ul class="main-nav flex">
                 <button class="menu-btn" onclick="menuToggle()">X</button>
-                <li><a href="#" onclick="menuToggle()" onclick="openHomePage()">Home</a></li>
+                <li><a href="#" onclick="openHomePage()">Home</a></li>
                 <li><a class="gallery-btn" href="#" onclick="menuToggle()" onclick="openGallery()">Gallery</a></li>
                 <li><a href="#" class="memes-btn" onclick="menuToggle()">Memes</a></li>
                 <li><a href="#" onclick="menuToggle()">About</a></li>
@@ -46,7 +46,7 @@
                     <li><a href="#" onclick="downloadMeme(this)" download="my-img.jpg">Download</a></li>
                     <li><a href="#" onclick="uploadMeme()">Share</a></li>
                     <li><a href="#" onclick="onSaveMeme()">Save</a></li>
-                    <li><input type="file" class="file-input" name="image" onchange="onImgInput(event)"/></li>
+                    <!-- <li><input type="file" class="file-input" name="image" onchange="onImgInput(event)"/></li> -->
                 </ul>
             </div>
             <div class="control-container">
@@ -68,7 +68,7 @@
                     <img src="./ICONS/align-right.png" onclick="onChangeAlign('right')">
                 </div>
                 <div class="share-container"></div>
-                <p class="user-msg"></p>
+                <p class="user-msg"></p>    
             </div>
             <div class="txt-container">
                 <input class="txt-input" type="text" placeholder="Enter some text"

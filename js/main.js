@@ -28,13 +28,14 @@ function openGallery() {
 }
 
 function openHomePage() {
+    console.log('ON');
     document.querySelector('.memes').hidden = true;
     var elCanvasPage = document.querySelector('.canvas');
     elCanvasPage.hidden = true;
-    var elHomePage = document.querySelector('.home');
-    elHomePage.hidden = false;
     var elGallery = document.querySelector('.gallery');
     elGallery.hidden = true;
+    var elHomePage = document.querySelector('.home');
+    elHomePage.hidden = false;
 }
 
 // function closeNav() {

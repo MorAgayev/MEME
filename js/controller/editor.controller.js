@@ -1,16 +1,12 @@
 'use strict'
 function updateCanvas() {
-    const width = gImage.width;
-    const height = gImage.height;
-    gElCanvas.width = width;
-    gElCanvas.height = height;
-    gCtx.drawImage(gImage, 0,0); 
+    gCtx.drawImage(gImage, 0,0, gElCanvas.width, gElCanvas.height); 
     gMeme.lines.forEach(line => {
-        drawText(line.txt, width/2, line.location.y, `${line.size}px ${line.fontFamily}`, line.color, line.align);
+        drawText(line)
         if(line.id === gMeme.selectedLineIdx) {
             var lineHeight = gCtx.measureText(line).actualBoundingBoxAscent;
             var lineWidth = gCtx.measureText(line.txt).width;
-            setRect(width/2-lineWidth,line.location.y-lineHeight-5, lineWidth*2, lineHeight+10);
+            setRect(gElCanvas.width/2-lineWidth,line.location.y-lineHeight-5, lineWidth*2, lineHeight+10);
         }
     })
 }
@@ -103,13 +99,25 @@ function onChangeTxt(txt) {
     updateCanvas()
 }
 
-function drawText(text,x,y, fontSize, color, align) {
-    gCtx.font = fontSize;
+// function drawText(text,x,y, fontSize, color, align) {
+//     gCtx.font = fontSize;
+//     gCtx.fillStyle = color;
+//     gCtx.textAlign = align;
+//     gCtx.fillText(text, x, y);
+//     gCtx.strokeText(text, x, y);
+// }
+
+function drawText(line) {
+    const { size, color, align, txt, fontFamily } = line;
+    const { x, y } = line.location;
+    gCtx.font = size+'px ' + fontFamily;
     gCtx.fillStyle = color;
     gCtx.textAlign = align;
-    gCtx.fillText(text, x, y);
-    gCtx.strokeText(text, x, y);
+    gCtx.fillText(txt, x, y);
+    gCtx.strokeText(txt, x, y);
 }
+
+
 
 function editTxtStyle() {
     var currLine = gMeme.lines[gMeme.selectedLineIdx];
@@ -123,7 +131,7 @@ function drawImg(src) {
     var img = new Image();
     img.src = src;
     img.onload = () => {
-      gCtx.moothingQuality = 'high';
+      gCtx.smoothingQuality = 'high';
       gImage = img;
       updateCanvas()
     };

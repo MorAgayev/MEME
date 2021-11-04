@@ -14,7 +14,7 @@ function createMeme() {
                 id: 0,
                 txt:'',
                 size:40,
-                location:{x:20, y:50},
+                location:{x:gElCanvas.width / 2, y:50},
                 align:'center',
                 color: 'white',
                 borderColor:'black',
@@ -24,7 +24,7 @@ function createMeme() {
             {
                 id: 1,
                 txt:'',
-                location:{x:20, y: (500 - 50)},
+                location:{x:gElCanvas.width / 2, y: (500 - 50)},
                 size:40,
                 align:'center',
                 color: 'white',
